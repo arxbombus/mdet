@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import re
 
 from .nodes import ClausewitzBlock, ClausewitzComparison, ClausewitzList, ClausewitzValue
 
@@ -75,7 +76,7 @@ class ClausewitzFormatter:
     def _needs_quotes(self, text: str) -> bool:
         if not text:
             return True
-        allowed = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_./@:[]^?")
+        allowed = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_./@:[]^?|")
         return any(ch.isspace() or ch not in allowed for ch in text)
 
     def _format_comparison(self, comparison: ClausewitzComparison) -> str:
@@ -88,14 +89,17 @@ class ClausewitzFormatter:
         return f"{comparison.left} {comparison.operator} {right_str}"
 
     def _can_inline_block(self, block: ClausewitzBlock) -> bool:
-        if len(block.entries) != 1:
+        if not block.entries:
             return False
-        entry = block.entries[0]
-        return isinstance(entry.value, (str, int, float, bool))
+        if len(block.entries) == 1:
+            return self._is_scalar_value(block.entries[0].value)
+        if len(block.entries) == 2:
+            return all(self._is_numeric_scalar(entry.value) for entry in block.entries)
+        return False
 
     def _format_inline_entry(self, key: str, value: ClausewitzValue) -> str:
         if isinstance(value, ClausewitzBlock) and self._can_inline_block(value):
-            inner = self._format_inline_entry(value.entries[0].key, value.entries[0].value)
+            inner = self._format_inline_block(value)
             return f"{key} = {{ {inner} }}"
         if isinstance(value, ClausewitzList) and self._can_inline_list(value):
             inner = " ".join(self._format_scalar(v) for v in value.values)
@@ -112,5 +116,21 @@ class ClausewitzFormatter:
     def _format_inline_block(self, block: ClausewitzBlock) -> str:
         if not self._can_inline_block(block):
             raise ValueError("Cannot inline complex block")
-        entry = block.entries[0]
-        return f"{entry.key} = {self._format_scalar(entry.value)}"
+        parts = [f"{entry.key} = {self._format_scalar(entry.value)}" for entry in block.entries]
+        return " ".join(parts)
+
+    def _is_scalar_value(self, value: ClausewitzValue) -> bool:
+        return not isinstance(value, (ClausewitzBlock, ClausewitzList, ClausewitzComparison))
+
+    def _is_numeric_scalar(self, value: ClausewitzValue) -> bool:
+        if not self._is_scalar_value(value):
+            return False
+        if isinstance(value, bool):
+            return False
+        if isinstance(value, (int, float)):
+            return True
+        if isinstance(value, str):
+            if value.startswith("@"):  # constant/coordinate reference
+                return True
+            return bool(re.fullmatch(r"-?\d+(?:\.\d+)?", value))
+        return False

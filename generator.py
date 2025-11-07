@@ -10,14 +10,14 @@ from scripts.generator import ClausewitzFormatter, ClausewitzParser, DocumentSch
 from scripts.generator.schemas import technologies_schema
 
 DEFAULT_INPUT_DIR = Path("docs/millennium-dawn/common/technologies")
-DEFAULT_OUTPUT_DIR = Path("v2_outputs")
+DEFAULT_OUTPUT_DIR = Path("out/")
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Parse Clausewitz technology files and write normalized Millennium Dawn outputs "
-            "(matching the formatting used in v2_outputs)."
+            "(matching the formatting used in out/)."
         )
     )
     parser.add_argument(
@@ -30,7 +30,7 @@ def parse_args() -> argparse.Namespace:
         "-o",
         "--output-dir",
         default=str(DEFAULT_OUTPUT_DIR),
-        help="Directory where normalized files should be written (defaults to v2_outputs).",
+        help="Directory where normalized files should be written (defaults to out/).",
     )
     parser.add_argument(
         "--indent",

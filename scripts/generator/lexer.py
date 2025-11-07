@@ -6,6 +6,8 @@ from dataclasses import dataclass, field
 from enum import Enum, auto
 from typing import Iterable
 
+IDENTIFIER_EXTRA_CHARS = {"_", ".", "@", ":", "-", "^", "?", "|"}
+
 
 class TokenType(Enum):
     IDENTIFIER = auto()
@@ -74,7 +76,7 @@ class ClausewitzLexer:
             if char in "<>!=":
                 self._emit_operator()
                 continue
-            if char.isalpha() or char in {"_", ".", "@", ":", "-"}:
+            if char.isalpha() or char in IDENTIFIER_EXTRA_CHARS:
                 self._emit_identifier()
                 continue
             raise ValueError(f"Unexpected character '{char}' at {self._line}:{self._column}")
@@ -134,6 +136,13 @@ class ClausewitzLexer:
         buffer = [self._advance()]  # consume first char
         while not self._is_eof and (self._peek().isdigit() or self._peek() == "."):
             buffer.append(self._advance())
+        if not self._is_eof and (self._peek().isalnum() or self._peek() in IDENTIFIER_EXTRA_CHARS):
+            while not self._is_eof and (self._peek().isalnum() or self._peek() in IDENTIFIER_EXTRA_CHARS):
+                buffer.append(self._advance())
+            word = "".join(buffer)
+            token_type = self._classify(word)
+            self.tokens.append(Token(token_type, word, start_line, start_col))
+            return
         text = "".join(buffer)
         dot_count = text.count(".")
         if dot_count > 1:
@@ -153,9 +162,7 @@ class ClausewitzLexer:
     def _emit_identifier(self) -> None:
         start_line, start_col = self._line, self._column
         buffer = [self._advance()]
-        while not self._is_eof and (
-            self._peek().isalnum() or self._peek() in {"_", ".", "@", ":", "-", "^", "?"}
-        ):
+        while not self._is_eof and (self._peek().isalnum() or self._peek() in IDENTIFIER_EXTRA_CHARS):
             buffer.append(self._advance())
         word = "".join(buffer)
         if word in {"yes", "no"}:
