@@ -4,7 +4,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech special_forces_airmobile"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_AMB
+		doctrine_name = "TITLE_SPECIAL_FORCES_AMB"
 		enable_subunits = { air_assault_Arty_Battery }
 		doctrine = yes
 		xp_research_type = army
@@ -26,7 +26,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech armored_airmobile_corps"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		dependencies = { special_forces_airmobile = 1 }
 		L_Air_assault_Bat = { fuel_consumption = -0.1 }
 		xor = { gunship_escorts fortunate_son }
@@ -59,7 +59,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech expanded_pilot_training"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		xor = { open_air_assault_schools }
 		force_use_small_tech_layout = yes
 		special_forces_cap = 0.05
@@ -88,7 +88,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech open_air_assault_schools"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		xor = { expanded_pilot_training }
 		force_use_small_tech_layout = yes
 		special_forces_min = 2
@@ -117,7 +117,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech massed_assault_formations"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		doctrine = yes
 		L_Air_assault_Bat = {
@@ -148,7 +148,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech coordinated_staging_areas"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		doctrine = yes
 		L_Air_assault_Bat = { max_organisation = 2.5 }
@@ -175,7 +175,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech glamorized_air_assault"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		paratroopers_special_forces_contribution_factor = -0.05
 		special_forces_min = 2
@@ -207,7 +207,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech slingloading_resuppy"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		xor = { mobilitas }
 		force_use_small_tech_layout = yes
 		doctrine = yes
@@ -236,7 +236,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech mobilitas"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		xor = { slingloading_resuppy }
 		L_Air_assault_Bat = { maximum_speed = 0.15 }
 		force_use_small_tech_layout = yes
@@ -264,7 +264,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech mobile_protected_firepower"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		armor_Recce_Comp = {
 			battalion_mult = {
@@ -298,7 +298,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech internal_recruitment_drives"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		special_forces_cap = 0.02
 		force_use_small_tech_layout = yes
 		path = {
@@ -325,7 +325,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech improved_school_pipelines"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		special_forces_training_time_factor = -0.15
 		force_use_small_tech_layout = yes
 		path = {
@@ -356,7 +356,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech heavy_lift_helicopters"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		xor = { forward_air_traffic_control }
 		L_Air_assault_Bat = { maximum_speed = 0.05 }
 		force_use_small_tech_layout = yes
@@ -384,7 +384,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech forward_air_traffic_control"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		xor = { heavy_lift_helicopters }
 		force_use_small_tech_layout = yes
 		L_Air_assault_Bat = { max_organisation = 1.5 }
@@ -426,7 +426,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech call_for_fires"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		air_assault_Arty_Battery = {
 			battalion_mult = {
@@ -460,7 +460,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech internal_medevac_units"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		helicopter_combat_service_support = { casualty_trickleback = 0.05 }
 		path = {
@@ -487,7 +487,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech pilot_and_enlisted_bonuses"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		special_forces_cap = 0.02
 		path = {
@@ -514,7 +514,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech forward_arm_repair_points"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		doctrine = yes
 		category_atk_helo = {
@@ -544,7 +544,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech assembly_area_coordination"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		doctrine = yes
 		L_Air_assault_Bat = {
@@ -570,7 +570,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech strike_fast_strike_hard"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		doctrine = yes
 		L_Air_assault_Bat = {
@@ -597,7 +597,7 @@ technologies = {
 			log = "[GetDateText]: [Root.GetName]: add tech gunship_escorts"
 			add_ideas = gunship_escorts_hidden_spirit
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		dependencies = { special_forces_airmobile = 1 }
 		path = {
 			research_cost_coeff = 1
@@ -625,7 +625,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech hot_landing_zone_insertions"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		paradrop_organization_factor = 0.05
 		paratrooper_aa_defense = 0.25
@@ -657,7 +657,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech command_jtac_teams"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		xor = { dispersed_jtac_teams }
 		force_use_small_tech_layout = yes
 		L_Recce_Comp = {
@@ -708,7 +708,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech dispersed_jtac_teams"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		xor = { command_jtac_teams }
 		force_use_small_tech_layout = yes
 		L_Recce_Comp = {
@@ -759,7 +759,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech forward_staged_supply_lines"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		category_air_aslt = {
 			supply_consumption_factor = -0.05
@@ -789,7 +789,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech helicopter_gunship_interdiction"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		category_atk_helo = {
 			defense = 0.05
 			soft_attack = 0.05
@@ -820,7 +820,7 @@ technologies = {
 			log = "[GetDateText]: [Root.GetName]: add tech prioritized_gunship_crews"
 			add_ideas = atk_helo_crew_prioritization_hidden_spirit
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		doctrine = yes
 		path = {
@@ -846,7 +846,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech escorted_medevac_flights"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		helicopter_combat_service_support = { casualty_trickleback = 0.05 }
 		doctrine = yes
@@ -873,7 +873,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech attack_helicopter_brigades"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		attack_helo_bat = { combat_width = -0.5 }
 		doctrine = yes
@@ -905,7 +905,7 @@ technologies = {
 			log = "[GetDateText]: [Root.GetName]: add tech transport_helicopter_defensive_weapons"
 			add_ideas = transport_helicopter_defensive_weapons_hidden_spirit
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		xor = { helicopter_supplied_fuel_points }
 		force_use_small_tech_layout = yes
 		doctrine = yes
@@ -932,7 +932,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech helicopter_supplied_fuel_points"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		xor = { transport_helicopter_defensive_weapons }
 		force_use_small_tech_layout = yes
 		doctrine = yes
@@ -965,7 +965,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech gunship_close_support"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		L_Recce_Comp = {
 			battalion_mult = {
@@ -1003,7 +1003,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech beans_and_bullets_by_helicopter"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		helicopter_combat_service_support = { supply_consumption_factor = -0.15 }
 		doctrine = yes
@@ -1030,7 +1030,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech nap_of_the_earth_insertions"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		paratrooper_aa_defense = 0.15
 		path = {
@@ -1058,7 +1058,7 @@ technologies = {
 			log = "[GetDateText]: [Root.GetName]: add tech airmobile_maintainers"
 			add_ideas = airmobile_maintainers_hidden_spirit
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		doctrine = yes
 		path = {
@@ -1084,7 +1084,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech airmobile_engineering"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		L_Engi_Comp = {
 			battalion_mult = {
@@ -1124,7 +1124,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech hunter_killer_helo_teams"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		category_atk_helo = { max_organisation = 1 }
 		doctrine = yes
@@ -1151,7 +1151,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech mid_air_helicopter_refueling"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		category_air_aslt = {
 			fuel_consumption = -0.05
 			supply_consumption_factor = -0.05
@@ -1177,7 +1177,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech airmobile_reconassiance_by_fire"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		category_atk_helo = {
 			recon = 0.1
@@ -1203,7 +1203,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech fortunate_son"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		special_forces_cap = 0.02
 		special_forces_training_time_factor = 0.1
 		L_Air_assault_Bat = {
@@ -1238,7 +1238,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech precision_helicopter_flying"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		paradrop_organization_factor = 0.05
 		L_Air_assault_Bat = { max_organisation = 2.5 }
@@ -1270,7 +1270,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech external_fuel_tanks"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		xor = { precision_firepower }
 		force_use_small_tech_layout = yes
 		L_Air_assault_Bat = { fuel_capacity = 0.25 }
@@ -1298,7 +1298,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech precision_firepower"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		xor = { external_fuel_tanks }
 		force_use_small_tech_layout = yes
 		doctrine = yes
@@ -1332,7 +1332,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech rapid_unit_rotations"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		L_Air_assault_Bat = {
 			default_morale = 0.1
@@ -1362,7 +1362,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech fastroping_assault_operations"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		L_Air_assault_Bat = {
 			urban = {
@@ -1400,7 +1400,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech rapid_asset_interdiction"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		category_inf_aslt = { maximum_speed = 0.1 }
 		force_use_small_tech_layout = yes
 		doctrine = yes
@@ -1431,7 +1431,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech extended_pilot_training"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		xor = { critical_care_medevac }
 		force_use_small_tech_layout = yes
 		L_Air_assault_Bat = { breakthrough = 0.15 }
@@ -1459,7 +1459,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech critical_care_medevac"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		xor = { extended_pilot_training }
 		force_use_small_tech_layout = yes
 		helicopter_combat_service_support = { casualty_trickleback = 0.1 }
@@ -1487,7 +1487,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech airmobile_leadership_courses"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		L_Air_assault_Bat = { max_organisation = 1 }
 		doctrine = yes
@@ -1514,7 +1514,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech combat_resupply_flights"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		helicopter_combat_service_support = {
 			battalion_mult = {
@@ -1546,7 +1546,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech expanded_light_fighter_bypass_operations"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		category_inf_aslt = { maximum_speed = 0.05 }
 		doctrine = yes
@@ -1573,7 +1573,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech bad_weather_flight_training"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		category_atk_helo = { soft_attack = 0.05 }
 		doctrine = yes
@@ -1600,7 +1600,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech cls_by_doctrine"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		L_Air_assault_Bat = { casualty_trickleback = 0.01 }
 		doctrine = yes
@@ -1627,7 +1627,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech night_combat_insertions"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		land_night_attack = 0.15
 		doctrine = yes
@@ -1654,7 +1654,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech rapid_battery_emplacement"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		air_assault_Arty_Battery = {
 			battalion_mult = {
@@ -1687,7 +1687,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech dedicated_spotter_teams"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		doctrine = yes
 		L_Recce_Comp = {
@@ -1727,7 +1727,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech maintaining_momentum"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		category_air_aslt = { maximum_speed = 0.05 }
 		force_use_small_tech_layout = yes
 		doctrine = yes
@@ -1750,7 +1750,7 @@ technologies = {
 			add_to_variable = { special_doctrines_researched = 1 }
 			log = "[GetDateText]: [Root.GetName]: add tech infantry_squad_reconassiance"
 		}
-		doctrine_name = TITLE_SPECIAL_FORCES_ABN
+		doctrine_name = "TITLE_SPECIAL_FORCES_ABN"
 		force_use_small_tech_layout = yes
 		category_inf_aslt = { soft_attack = 0.05 }
 		doctrine = yes

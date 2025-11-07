@@ -94,11 +94,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -140,11 +140,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -182,11 +182,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2035.01.01
+				date < "2035.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -378,11 +378,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_m_cruiser }
@@ -416,11 +416,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_m_cruiser }
@@ -450,11 +450,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2035.01.01
+				date < "2035.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_m_cruiser }
@@ -608,11 +608,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2002.01.01
+				date < "2002.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_destroyer }
@@ -657,11 +657,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_destroyer }
@@ -695,11 +695,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_destroyer }
@@ -729,11 +729,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2035.01.01
+				date < "2035.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_destroyer }
@@ -768,11 +768,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_destroyer }
@@ -806,11 +806,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_destroyer }
@@ -841,11 +841,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_destroyer }
@@ -999,11 +999,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2002.01.01
+				date < "2002.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_frigate }
@@ -1048,11 +1048,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_frigate }
@@ -1086,11 +1086,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_frigate }
@@ -1120,11 +1120,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2035.01.01
+				date < "2035.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_frigate }
@@ -1159,11 +1159,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_frigate }
@@ -1198,11 +1198,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_frigate }
@@ -1233,11 +1233,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_frigate }
@@ -1391,11 +1391,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2002.01.01
+				date < "2002.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_corvette }
@@ -1440,11 +1440,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_corvette }
@@ -1478,11 +1478,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_corvette }
@@ -1512,11 +1512,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2035.01.01
+				date < "2035.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_corvette }
@@ -1558,11 +1558,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_corvette }
@@ -1596,11 +1596,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_corvette }
@@ -1631,11 +1631,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 		}
 		categories = { CAT_Military CAT_naval_eqp CAT_surface_ship CAT_corvette }
@@ -2085,11 +2085,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2002.01.01
+				date < "2002.01.01"
 			}
 			modifier = {
 				factor = 0
@@ -2131,11 +2131,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 0
@@ -2177,11 +2177,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 			modifier = {
 				factor = 0
@@ -2219,11 +2219,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2035.01.01
+				date < "2035.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 			modifier = {
 				factor = 0
@@ -2379,11 +2379,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 0
@@ -2425,11 +2425,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 			modifier = {
 				factor = 0
@@ -2467,11 +2467,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2035.01.01
+				date < "2035.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 			modifier = {
 				factor = 0
@@ -2615,11 +2615,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2002.01.01
+				date < "2002.01.01"
 			}
 			modifier = {
 				factor = 0.2
@@ -2657,11 +2657,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 0.2
@@ -2699,11 +2699,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 			modifier = {
 				factor = 0.2
@@ -2737,11 +2737,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2035.01.01
+				date < "2035.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 			modifier = {
 				factor = 0.2
@@ -2843,11 +2843,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2002.01.01
+				date < "2002.01.01"
 			}
 			modifier = {
 				factor = 200
@@ -2883,11 +2883,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 20
@@ -2923,11 +2923,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 			modifier = {
 				factor = 20
@@ -2959,11 +2959,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2035.01.01
+				date < "2035.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 			modifier = {
 				factor = 20
@@ -3107,11 +3107,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2002.01.01
+				date < "2002.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -3151,11 +3151,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -3195,11 +3195,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -3235,11 +3235,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2035.01.01
+				date < "2035.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -3335,11 +3335,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -3371,11 +3371,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -3403,11 +3403,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2035.01.01
+				date < "2035.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -3503,11 +3503,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -3543,11 +3543,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -3579,11 +3579,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 0.5
-				date < 2035.01.01
+				date < "2035.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 			modifier = {
 				factor = 2

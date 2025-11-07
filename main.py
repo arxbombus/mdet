@@ -1,5 +1,5 @@
-from scripts.generator.main import run_parser_test
+from generator import main as cli_main
 
 
 if __name__ == "__main__":
-    run_parser_test()
+    cli_main()

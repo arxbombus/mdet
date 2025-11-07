@@ -65,11 +65,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -116,11 +116,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -165,11 +165,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -210,11 +210,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -266,11 +266,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -313,11 +313,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -360,11 +360,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -407,11 +407,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -454,11 +454,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -501,11 +501,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -544,11 +544,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -591,11 +591,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -639,11 +639,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -687,11 +687,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -735,11 +735,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -794,11 +794,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -842,11 +842,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -890,11 +890,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -934,11 +934,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 2

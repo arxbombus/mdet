@@ -2,20 +2,20 @@
 
 from __future__ import annotations
 
+from dataclasses import dataclass, field
 from typing import Literal
-
-from pydantic import BaseModel, Field
 
 ClausewitzValueKind = Literal["scalar", "block", "list", "comparison", "any"]
 
 
-class KeyRule(BaseModel):
+@dataclass(slots=True)
+class KeyRule:
     """Schema rule describing how a particular key behaves."""
 
     name: str
     kind: ClausewitzValueKind = "any"
     repeatable: bool = False
-    children: dict[str, "KeyRule"] = Field(default_factory=dict)
+    children: dict[str, "KeyRule"] = field(default_factory=dict)
     wildcard: "KeyRule | None" = None
 
     def child(self, key: str) -> "KeyRule | None":
@@ -28,7 +28,8 @@ class KeyRule(BaseModel):
             self.children[rule.name] = rule
 
 
-class DocumentSchema(BaseModel):
+@dataclass(slots=True)
+class DocumentSchema:
     """Schema describing a Clausewitz document type (e.g., technologies)."""
 
     name: str
@@ -44,10 +45,3 @@ class DocumentSchema(BaseModel):
             if rule is None:
                 return None
         return rule
-
-
-KeyRule.model_rebuild()
-DocumentSchema.model_rebuild()
-
-
-KeyRule.model_rebuild()

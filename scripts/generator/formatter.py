@@ -63,7 +63,7 @@ class ClausewitzFormatter:
         if isinstance(value, str):
             if value.startswith("string(") and value.endswith(")"):
                 inner = value[len("string(") : -1]
-                return f'"{inner}"'
+                return f'"{inner.replace("\"", "\\\"")}"'
             if self._needs_quotes(value):
                 return f'"{value.replace("\"", "\\\"")}"'
             return value
@@ -75,7 +75,7 @@ class ClausewitzFormatter:
     def _needs_quotes(self, text: str) -> bool:
         if not text:
             return True
-        allowed = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_./@:")
+        allowed = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_./@:[]^?")
         return any(ch.isspace() or ch not in allowed for ch in text)
 
     def _format_comparison(self, comparison: ClausewitzComparison) -> str:

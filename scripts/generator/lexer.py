@@ -1,302 +1,199 @@
-from typing import Any, Dict, List, Literal, Optional, Set, TypedDict, NotRequired
+"""Modern Clausewitz lexer for v2 pipeline."""
+
+from __future__ import annotations
+
+from dataclasses import dataclass, field
 from enum import Enum, auto
-from dataclasses import dataclass
-import json
-import re
-import os
-from scripts.generator.utils import resolve_config
-from scripts.generator.logger import Logger
+from typing import Iterable
 
 
 class TokenType(Enum):
-    STRING_LITERAL = auto()
-    NUMBER_LITERAL = auto()
-    PERCENTAGE_LITERAL = auto()
-    DATE_LITERAL = auto()
-    BOOLEAN = auto()
-    OPERATOR = auto()
-    KEYWORD = auto()
-    SCOPE = auto()
-    MODIFIER = auto()
-    EFFECT = auto()
-    TRIGGER = auto()
-    VARIABLE = auto()
-    # TARGETED_VARIABLE = auto()
-    CONSTANT = auto()
     IDENTIFIER = auto()
+    KEYWORD = auto()
+    MODIFIER = auto()
+    TRIGGER = auto()
     OPEN_BRACE = auto()
     CLOSE_BRACE = auto()
+    STRING = auto()
+    NUMBER = auto()
+    BOOLEAN = auto()
+    OPERATOR = auto()
     COMMENT = auto()
-    ROOT = auto()  # unused in lexer - root of AST tree
     EOF = auto()
 
-    @classmethod
-    def get_token_type(cls, type: str):
-        for token_type in cls:
-            if token_type.name == type:
-                return token_type
-        raise ValueError(f"Unknown token type: {type}")
 
-
-@dataclass
+@dataclass(slots=True)
 class Token:
-    token_type: TokenType
-    value: Any
+    type: TokenType
+    value: str | int | float | bool | None
     line: int
     column: int
 
 
-GameType = Literal["hoi4", "stellaris"]
+@dataclass(slots=True)
+class LexerMetadata:
+    keywords: set[str] = field(default_factory=set)
+    modifiers: set[str] = field(default_factory=set)
+    triggers: set[str] = field(default_factory=set)
 
-OPERATORS = {">", "<", ">=", "<=", "!=", "=", ":", "?", "@"}
-
-
-class LexerError(Exception):
-    def __init__(self, message, line, column):
-        super().__init__(f"Error: {message} at {line}:{column}")
-        self.line = line
-        self.column = column
-
-
-class LexerConfig(TypedDict):
-    tokenize: NotRequired[bool]
-    enable_logger: NotRequired[bool]
-    clausewitz_types_path: NotRequired[str]
-    game_info_path: NotRequired[str]
+    @classmethod
+    def from_iterables(cls, *, keywords: Iterable[str] = (), modifiers: Iterable[str] = (), triggers: Iterable[str] = ()):
+        return cls(set(keywords), set(modifiers), set(triggers))
 
 
-class LexerConfigRequired(TypedDict):
-    tokenize: bool
-    enable_logger: bool
-    clausewitz_types_path: str
-    game_info_path: str
+class ClausewitzLexer:
+    def __init__(self, text: str, metadata: LexerMetadata | None = None):
+        self.text = text
+        self.metadata = metadata or LexerMetadata()
+        self.tokens: list[Token] = []
+        self._pos = 0
+        self._line = 1
+        self._column = 1
 
+    def tokenize(self) -> list[Token]:
+        while not self._is_eof:
+            char = self._peek()
+            if char.isspace():
+                self._consume_whitespace()
+                continue
+            if char == "#":
+                self._consume_comment()
+                continue
+            if char in "{}":
+                self._emit_brace(char)
+                continue
+            if char == "[":
+                self._emit_bracket_expression()
+                continue
+            if char in ('"', "'"):
+                self._emit_string()
+                continue
+            if char.isdigit() or (char == "-" and self._peek(1).isdigit()):
+                self._emit_number()
+                continue
+            if char in "<>!=":
+                self._emit_operator()
+                continue
+            if char.isalpha() or char in {"_", ".", "@", ":", "-"}:
+                self._emit_identifier()
+                continue
+            raise ValueError(f"Unexpected character '{char}' at {self._line}:{self._column}")
 
-DEFAULT_CONFIG: LexerConfigRequired = {
-    "tokenize": True,
-    "enable_logger": True,
-    "clausewitz_types_path": "scripts/generator/clausewitz.json",
-    "game_info_path": "scripts/generator/hoi4.json",
-}
+        self.tokens.append(Token(TokenType.EOF, None, self._line, self._column))
+        return self.tokens
 
-
-class Lexer:
-    def __init__(self, input: str, game_type: GameType, config: Optional[LexerConfig] = None):
-        self.input = input
-        self.game_type = game_type
-        self.config = resolve_config(config or {}, DEFAULT_CONFIG)
-        self.logger = Logger(config={"name": "Lexer Logger", "is_enabled": self.config["enable_logger"]}).logger
-        self.keywords: Set[str] = set()
-        self.modifiers: Set[str] = set()
-        self.effects: Set[str] = set()
-        self.triggers: Set[str] = set()
-        self.repeatable_keys: set[str] = set()
-        self._get_base_clausewitz_types()
-        self._get_game_specific_types()
-        self._start = 0
-        self.position = 0
-        self.line = 1
-        self.column = 1
-        self.tokens = []
-        if self.config["tokenize"]:
-            self.tokenize()
-
-    def _get_base_clausewitz_types(self):
-        clausewitz_path = self.config["clausewitz_types_path"]
-        with open(clausewitz_path) as f:
-            base = json.load(f)
-        self.keywords.update(base["keywords"])
-        self.triggers.update(base["triggers"])
-
-    def _get_game_specific_types(self):
-        game_info_path = self.config["game_info_path"]
-        with open(game_info_path) as f:
-            game_info = json.load(f)
-        self.modifiers.update(game_info["modifiers"])
-        self.effects.update(game_info["effects"])
-        self.triggers.update(game_info["triggers"])
-        self.repeatable_keys = set(game_info.get("repeatable_keys", []))
-
-    @property
-    def previous_token(self):
-        return self.tokens[-1] if self.tokens else None
-
-    @property
-    def has_more_chars(self):
-        return self.position < len(self.input)
-
-    @property
-    def char(self):
-        return self.input[self.position] if self.has_more_chars else "\0"
-
-    @property
-    def current_value(self):
-        return self.input[self._start : self.position] if self.has_more_chars else self.input[self._start :]
-
-    def _advance(self, steps=1):
-        for _ in range(steps):
-            if not self.has_more_chars:
-                raise LexerError("Attempt to advance beyond end of input", self.line, self.column)
-            if self.char == "\n":
-                self.line += 1
-                self.column = 1
-            else:
-                self.column += 1
-            self.position += 1
-
-    def _consume_while(self, condition):
-        while self.has_more_chars and condition(self.char):
+    def _consume_whitespace(self) -> None:
+        while not self._is_eof and self._peek().isspace():
             self._advance()
 
-    def _peek(self, steps=1):
-        if self.position + steps < len(self.input):
-            return self.input[self.position + steps]
-        return "\0"
+    def _consume_comment(self) -> None:
+        while not self._is_eof and self._peek() != "\n":
+            self._advance()
+        self._advance()  # consume newline if present
 
-    def _add_token(self, token_type: TokenType, value: Any, line: Optional[int] = None, column: Optional[int] = None):
-        self.logger.debug(
-            f"Adding token {token_type} with value '{value}' at line {line or self.line}, column {column or self.column}",
-        )
-        self.tokens.append(Token(token_type, value, line or self.line, max(column or self.column, 1)))
+    def _emit_brace(self, char: str) -> None:
+        token_type = TokenType.OPEN_BRACE if char == "{" else TokenType.CLOSE_BRACE
+        self.tokens.append(Token(token_type, char, self._line, self._column))
+        self._advance()
 
-    def _is_whitespace(self, char: str) -> bool:
-        return char.isspace() or char == "\n"
+    def _emit_bracket_expression(self) -> None:
+        start_line, start_col = self._line, self._column
+        buffer = [self._advance()]  # consume '['
+        while not self._is_eof:
+            char = self._advance()
+            buffer.append(char)
+            if char == "]":
+                word = "".join(buffer)
+                self.tokens.append(Token(TokenType.IDENTIFIER, word, start_line, start_col))
+                return
+        raise ValueError(f"Unterminated bracket expression starting at {start_line}:{start_col}")
 
-    def _is_operator(self, chars: str) -> bool:
-        return chars in OPERATORS
+    def _emit_string(self) -> None:
+        quote = self._peek()
+        start_line, start_col = self._line, self._column
+        self._advance()
+        buffer: list[str] = []
+        while not self._is_eof:
+            char = self._peek()
+            if char == quote:
+                self._advance()
+                value = "".join(buffer)
+                self.tokens.append(Token(TokenType.STRING, value, start_line, start_col))
+                return
+            if char == "\\":
+                self._advance()
+                buffer.append(self._peek())
+                self._advance()
+            else:
+                buffer.append(char)
+                self._advance()
+        raise ValueError(f"Unterminated string starting at {start_line}:{start_col}")
 
-    def _get_identifier_token_type(self, chars: str):
-        if chars in self.keywords:
+    def _emit_number(self) -> None:
+        start_line, start_col = self._line, self._column
+        buffer = [self._advance()]  # consume first char
+        while not self._is_eof and (self._peek().isdigit() or self._peek() == "."):
+            buffer.append(self._advance())
+        text = "".join(buffer)
+        dot_count = text.count(".")
+        if dot_count > 1:
+            self.tokens.append(Token(TokenType.STRING, text, start_line, start_col))
+            return
+        value: int | float
+        value = float(text) if dot_count == 1 else int(text)
+        self.tokens.append(Token(TokenType.NUMBER, value, start_line, start_col))
+
+    def _emit_operator(self) -> None:
+        start_line, start_col = self._line, self._column
+        char = self._advance()
+        if not self._is_eof and self._peek() == "=" and char in "<>!=":
+            char += self._advance()
+        self.tokens.append(Token(TokenType.OPERATOR, char, start_line, start_col))
+
+    def _emit_identifier(self) -> None:
+        start_line, start_col = self._line, self._column
+        buffer = [self._advance()]
+        while not self._is_eof and (
+            self._peek().isalnum() or self._peek() in {"_", ".", "@", ":", "-", "^", "?"}
+        ):
+            buffer.append(self._advance())
+        word = "".join(buffer)
+        if word in {"yes", "no"}:
+            value = word == "yes"
+            self.tokens.append(Token(TokenType.BOOLEAN, value, start_line, start_col))
+            return
+        token_type = self._classify(word)
+        self.tokens.append(Token(token_type, word, start_line, start_col))
+
+    # Helpers -----------------------------------------------------------------
+    def _classify(self, word: str) -> TokenType:
+        if word in self.metadata.keywords:
             return TokenType.KEYWORD
-        elif chars in self.modifiers:
+        if word in self.metadata.modifiers:
             return TokenType.MODIFIER
-        elif chars in self.effects:
-            return TokenType.EFFECT
-        elif chars in self.triggers:
+        if word in self.metadata.triggers:
             return TokenType.TRIGGER
         return TokenType.IDENTIFIER
 
-    def _is_boolean(self, value: str) -> bool:
-        return value in {"yes", "no"}
+    @property
+    def _is_eof(self) -> bool:
+        return self._pos >= len(self.text)
 
-    def _handle_unexpected_char(self):
-        char = self.char
-        raise LexerError(f"Unexpected character '{char}'", self.line, self.column)
+    def _peek(self, ahead: int = 0) -> str:
+        index = self._pos + ahead
+        if index >= len(self.text):
+            return "\0"
+        return self.text[index]
 
-    def tokenize(self):
-        try:
-            self.logger.info("Starting tokenization")
-            while self.has_more_chars:
-                char = self.char
-                self.logger.debug(
-                    f"Processing character '{char}' at position {self.position}, line {self.line}, column {self.column}",
-                )
-                if self._is_whitespace(char):
-                    self._skip_whitespace()
-                elif char == "#":
-                    self._handle_comments()
-                elif char in {"{", "}"}:
-                    self._handle_braces()
-                elif char in ('"', "'"):
-                    self._handle_strings()
-                elif char.isdigit() or (char == "-" and self._peek().isdigit()):
-                    self._handle_numbers()
-                elif self._is_operator(char):
-                    self._handle_operator()
-                elif char.isalpha() or char in {"_", "-", ".", "@"}:
-                    self._handle_identifiers()
-                else:
-                    self._handle_unexpected_char()
-            self._add_token(TokenType.EOF, None)
-            self.logger.info("Tokenization complete")
-            return self.tokens
-        except LexerError as e:
-            self.logger.error(e)
-            # Handle or propagate the error as needed
-        return []
-
-    def _skip_whitespace(self):
-        self._consume_while(lambda c: c.isspace())
-
-    def _handle_braces(self):
-        if self.char == "{":
-            self._add_token(TokenType.OPEN_BRACE, "{")
-        elif self.char == "}":
-            self._add_token(TokenType.CLOSE_BRACE, "}")
-        self._advance()
-
-    def _handle_strings(self):
-        self._start = self.position + 1
-        quote = self.char
-        self._advance()
-        self._consume_while(lambda c: c != quote)
-        self._add_token(TokenType.STRING_LITERAL, self.current_value)  # strip quotes...I guess
-        self._advance()
-
-    def _handle_numbers(self):
-        self._start = self.position
-        # if self.char == "-" or self.char == "." or self.char == "%":
-        if self.char in {"-", "."}:
-            self._advance()
-        self._consume_while(lambda c: c.isdigit() or c in {".", "%"})
-        date_regex = r"\b\d{1,4}\.\d{1,4}\.\d{1,4}\b"
-        if re.match(date_regex, self.current_value):
-            self._add_token(TokenType.DATE_LITERAL, self.current_value)
-        elif "%" in self.current_value:
-            self._add_token(TokenType.PERCENTAGE_LITERAL, self.current_value)
+    def _advance(self) -> str:
+        char = self.text[self._pos]
+        self._pos += 1
+        if char == "\n":
+            self._line += 1
+            self._column = 1
         else:
-            value = self.current_value
-            if "." in value:
-                value = float(value)
-            else:
-                value = int(value)
-            self._add_token(TokenType.NUMBER_LITERAL, value)
-
-    def _handle_comments(self):
-        if self.char == "#":
-            self._start = self.position
-            self._consume_while(lambda c: c != "\n")
-            self._add_token(TokenType.COMMENT, self.current_value)
-
-    def _handle_operator(self):
-        self._start = self.position
-        _val = self.current_value + self._peek(1)
-        if self.char == "@":
-            self._handle_identifiers()
-        else:
-            if self._is_operator(_val):
-                self._advance(2)
-                self._add_token(TokenType.OPERATOR, self.current_value)
-            else:
-                self._advance()
-                self._add_token(TokenType.OPERATOR, self.current_value)
-
-    def _handle_identifiers(self):
-        self._start = self.position
-        if self.char == "@":  # @ should only be handled when it's the first char for TokenTypes.CONSTANT
-            self._advance()
-        self._consume_while(lambda c: c.isalnum() or c in {"_", "-", "."})
-        value = self.current_value
-        if self._is_boolean(value):
-            self._add_token(TokenType.BOOLEAN, value == "yes")
-        elif "@" in value:
-            if self.previous_token and self.previous_token.token_type == TokenType.IDENTIFIER:
-                self._add_token(TokenType.IDENTIFIER, value)
-            else:
-                self._add_token(TokenType.CONSTANT, value)
-        elif "." in value:
-            self._add_token(TokenType.SCOPE, value)
-        elif re.match(r"^[a-zA-Z_][a-zA-Z0-9_-]*$", value):
-            self._add_token(self._get_identifier_token_type(value), value)
-        else:
-            self._add_token(TokenType.IDENTIFIER, value)
+            self._column += 1
+        return char
 
 
-if __name__ == "__main__":
-    # use technologies_data.txt
-    input_text = open("countrytechtreeview.gui").read()
-    lexer = Lexer(input_text, "hoi4", config={"enable_logger": False})
-    tokens = lexer.tokenize()
-    # json output
-    with open("countrytechtreeview_tokenized.txt", "w+") as file:
-        file.writelines([repr(token) + "\n" for token in tokens])
+__all__ = ["ClausewitzLexer", "LexerMetadata", "Token", "TokenType"]

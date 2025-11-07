@@ -442,11 +442,11 @@ technologies = {
 			factor = 5
 			modifier = {
 				factor = 0.5
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2002.01.01
+				date < "2002.01.01"
 			}
 		}
 		special_project_specialization = { specialization_land }
@@ -476,11 +476,11 @@ technologies = {
 			factor = 5
 			modifier = {
 				factor = 0.5
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 		}
 		special_project_specialization = { specialization_land }
@@ -506,11 +506,11 @@ technologies = {
 			factor = 5
 			modifier = {
 				factor = 0.5
-				date < 2035.01.01
+				date < "2035.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 		}
 		special_project_specialization = { specialization_land }
@@ -623,11 +623,11 @@ technologies = {
 			factor = 5
 			modifier = {
 				factor = 0.5
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2012.01.01
+				date < "2012.01.01"
 			}
 		}
 	}
@@ -655,11 +655,11 @@ technologies = {
 			factor = 5
 			modifier = {
 				factor = 0.5
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 		}
 	}

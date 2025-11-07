@@ -309,11 +309,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2002.01.01
+				date < "2002.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -380,11 +380,11 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2002.01.01
+				date < "2002.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -455,15 +455,15 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2003.01.01
+				date < "2003.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -536,15 +536,15 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2008.01.01
+				date < "2008.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -620,15 +620,15 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2013.01.01
+				date < "2013.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -694,15 +694,15 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2002.01.01
+				date < "2002.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -768,15 +768,15 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2008.01.01
+				date < "2008.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -840,15 +840,15 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2013.01.01
+				date < "2013.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -912,15 +912,15 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2018.01.01
+				date < "2018.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -988,15 +988,15 @@ technologies = {
 			factor = 1
 			modifier = {
 				factor = 0.5
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2023.01.01
+				date < "2023.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -1158,11 +1158,11 @@ technologies = {
 			factor = 3
 			modifier = {
 				factor = 5
-				date > 1999.01.01
+				date > "1999.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2005.01.01
+				date > "2005.01.01"
 			}
 		}
 		categories = { CAT_computing_tech CAT_Civilian }
@@ -1219,11 +1219,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2005.01.01
+				date > "2005.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2010.01.01
+				date > "2010.01.01"
 			}
 		}
 		categories = { CAT_computing_tech CAT_Civilian }
@@ -1314,11 +1314,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2010.01.01
+				date > "2010.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2015.01.01
+				date > "2015.01.01"
 			}
 		}
 		categories = { CAT_computing_tech CAT_Civilian }
@@ -1385,11 +1385,11 @@ technologies = {
 			factor = 3
 			modifier = {
 				factor = 0.5
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2002.01.01
+				date < "2002.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -1417,11 +1417,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2015.01.01
+				date > "2015.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2020.01.01
+				date > "2020.01.01"
 			}
 		}
 		categories = { CAT_computing_tech CAT_Civilian }
@@ -1488,15 +1488,15 @@ technologies = {
 			factor = 3
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2012.01.01
+				date < "2012.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2008.01.01
+				date < "2008.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -1524,11 +1524,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2025.01.01
+				date > "2025.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2030.01.01
+				date > "2030.01.01"
 			}
 		}
 		categories = { CAT_computing_tech CAT_Civilian }
@@ -1591,11 +1591,11 @@ technologies = {
 			factor = 3
 			modifier = {
 				factor = 0.5
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2027.01.01
+				date < "2027.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -1623,11 +1623,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2035.01.01
+				date > "2035.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2040.01.01
+				date > "2040.01.01"
 			}
 		}
 		categories = { CAT_computing_tech CAT_Civilian }
@@ -1717,11 +1717,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 1999.01.01
+				date > "1999.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2005.01.01
+				date > "2005.01.01"
 			}
 		}
 		categories = { CAT_internet_tech CAT_Civilian }
@@ -1780,11 +1780,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2002.01.01
+				date > "2002.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2006.01.01
+				date > "2006.01.01"
 			}
 		}
 		categories = { CAT_internet_tech CAT_Civilian }
@@ -1845,11 +1845,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2003.01.01
+				date > "2003.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2008.01.01
+				date > "2008.01.01"
 			}
 		}
 		categories = { CAT_internet_tech CAT_Civilian }
@@ -1871,11 +1871,11 @@ technologies = {
 			factor = 3
 			modifier = {
 				factor = 0.5
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2002.01.01
+				date < "2002.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -1909,11 +1909,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2010.01.01
+				date > "2010.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2012.01.01
+				date > "2012.01.01"
 			}
 		}
 		categories = { CAT_internet_tech CAT_Civilian }
@@ -1976,11 +1976,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2009.01.01
+				date > "2009.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2012.01.01
+				date > "2012.01.01"
 			}
 		}
 		categories = { CAT_internet_tech CAT_Civilian }
@@ -2010,11 +2010,11 @@ technologies = {
 			factor = 3
 			modifier = {
 				factor = 0.5
-				date < 2005.01.01
+				date < "2005.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2002.01.01
+				date < "2002.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -2048,11 +2048,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2012.01.01
+				date > "2012.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2015.01.01
+				date > "2015.01.01"
 			}
 		}
 		categories = { CAT_internet_tech CAT_Civilian }
@@ -2107,11 +2107,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2006.01.01
+				date > "2006.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2009.01.01
+				date > "2009.01.01"
 			}
 		}
 		categories = { CAT_internet_tech CAT_Civilian }
@@ -2144,15 +2144,15 @@ technologies = {
 			factor = 5
 			modifier = {
 				factor = 0.5
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2007.01.01
+				date < "2007.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2003.01.01
+				date < "2003.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -2186,11 +2186,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2014.01.01
+				date > "2014.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2017.01.01
+				date > "2017.01.01"
 			}
 		}
 		categories = { CAT_internet_tech CAT_Civilian }
@@ -2212,15 +2212,15 @@ technologies = {
 			factor = 3
 			modifier = {
 				factor = 0.5
-				date < 2010.01.01
+				date < "2010.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2007.01.01
+				date < "2007.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2003.01.01
+				date < "2003.01.01"
 			}
 			modifier = {
 				factor = 2
@@ -2254,11 +2254,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2014.01.01
+				date > "2014.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2017.01.01
+				date > "2017.01.01"
 			}
 		}
 		categories = { CAT_internet_tech CAT_Civilian }
@@ -2286,15 +2286,15 @@ technologies = {
 			factor = 3
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2012.01.01
+				date < "2012.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2008.01.01
+				date < "2008.01.01"
 			}
 			modifier = {
 				factor = 0
@@ -2335,11 +2335,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2018.01.01
+				date > "2018.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2020.01.01
+				date > "2020.01.01"
 			}
 		}
 		categories = { CAT_internet_tech CAT_Civilian }
@@ -2366,15 +2366,15 @@ technologies = {
 			factor = 0.5
 			modifier = {
 				factor = 0.5
-				date < 2015.01.01
+				date < "2015.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2012.01.01
+				date < "2012.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2008.01.01
+				date < "2008.01.01"
 			}
 			modifier = {
 				factor = 0
@@ -2410,15 +2410,15 @@ technologies = {
 			factor = 5
 			modifier = {
 				factor = 0.5
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2017.01.01
+				date < "2017.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2013.01.01
+				date < "2013.01.01"
 			}
 			modifier = {
 				check_variable = {
@@ -2428,11 +2428,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2023.01.01
+				date > "2023.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2027.01.01
+				date > "2027.01.01"
 			}
 		}
 		categories = { CAT_internet_tech CAT_Civilian }
@@ -2457,15 +2457,15 @@ technologies = {
 			factor = 3
 			modifier = {
 				factor = 0.5
-				date < 2020.01.01
+				date < "2020.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2017.01.01
+				date < "2017.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2013.01.01
+				date < "2013.01.01"
 			}
 			modifier = {
 				check_variable = {
@@ -2475,11 +2475,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2023.01.01
+				date > "2023.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2027.01.01
+				date > "2027.01.01"
 			}
 		}
 		categories = { CAT_internet_tech CAT_Civilian }
@@ -2504,15 +2504,15 @@ technologies = {
 			factor = 5
 			modifier = {
 				factor = 0.5
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2023.01.01
+				date < "2023.01.01"
 			}
 			modifier = {
 				check_variable = {
@@ -2522,11 +2522,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2032.01.01
+				date > "2032.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2035.01.01
+				date > "2035.01.01"
 			}
 		}
 		categories = { CAT_internet_tech CAT_Civilian }
@@ -2548,15 +2548,15 @@ technologies = {
 			factor = 3
 			modifier = {
 				factor = 0.5
-				date < 2030.01.01
+				date < "2030.01.01"
 			}
 			modifier = {
 				factor = 0.2
-				date < 2025.01.01
+				date < "2025.01.01"
 			}
 			modifier = {
 				factor = 0
-				date < 2023.01.01
+				date < "2023.01.01"
 			}
 			modifier = {
 				check_variable = {
@@ -2566,11 +2566,11 @@ technologies = {
 			}
 			modifier = {
 				factor = 5
-				date > 2032.01.01
+				date > "2032.01.01"
 			}
 			modifier = {
 				factor = 50
-				date > 2035.01.01
+				date > "2035.01.01"
 			}
 		}
 		categories = { CAT_internet_tech CAT_Civilian }

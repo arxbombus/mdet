@@ -1,0 +1,43 @@
+scale_var_civil_war_size_by_autonomy_and_var_ideology_val = {
+	set_temp_variable = { civil_war_size = 0.94 }
+	set_temp_variable = { upper_ideology_range = 0.5 }
+	set_temp_variable = { lower_ideology_range = 0.1 }
+	set_temp_variable = { ideology_range = upper_ideology_range }
+	subtract_from_temp_variable = { ideology_range = lower_ideology_range }
+	subtract_from_temp_variable = { ideology_val = lower_ideology_range }
+	if = {
+		limit = {
+			check_variable = {
+				ideology_val < lower_ideology_range
+			}
+		}
+	}
+	else = {
+		divide_temp_variable = { ideology_val = ideology_range }
+	}
+	clamp_temp_variable = {
+		var = ideology_val
+		min = 0
+		max = 1
+	}
+	multiply_temp_variable = { ideology_val = 0.2 }
+	subtract_from_temp_variable = { civil_war_size = ideology_val }
+	set_temp_variable = { upper_autonomy_range = 0.95 }
+	set_temp_variable = { autonomy_range = upper_autonomy_range }
+	subtract_from_temp_variable = { autonomy_range = lower_autonomy_range }
+	set_temp_variable = { autonomy_val = autonomy_ratio }
+	subtract_from_temp_variable = { autonomy_val = lower_autonomy_range }
+	divide_temp_variable = { autonomy_val = autonomy_range }
+	if = {
+		limit = {
+			compare_autonomy_state < autonomy_colony
+		}
+		multiply_temp_variable = { autonomy_val = 0.5 }
+	}
+	multiply_temp_variable = { autonomy_val = 0.7 }
+	if = {
+		limit = { is_subject = no }
+		set_temp_variable = { autonomy_val = 0.3 }
+	}
+	subtract_from_temp_variable = { civil_war_size = autonomy_val }
+}
