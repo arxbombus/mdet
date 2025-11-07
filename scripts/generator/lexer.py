@@ -90,6 +90,7 @@ class Lexer:
         self.modifiers: Set[str] = set()
         self.effects: Set[str] = set()
         self.triggers: Set[str] = set()
+        self.repeatable_keys: set[str] = set()
         self._get_base_clausewitz_types()
         self._get_game_specific_types()
         self._start = 0
@@ -114,6 +115,7 @@ class Lexer:
         self.modifiers.update(game_info["modifiers"])
         self.effects.update(game_info["effects"])
         self.triggers.update(game_info["triggers"])
+        self.repeatable_keys = set(game_info.get("repeatable_keys", []))
 
     @property
     def previous_token(self):

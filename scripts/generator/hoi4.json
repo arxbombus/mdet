@@ -17,5 +17,10 @@
         "has_idea_with_trait",
         "allow_branch",
         "has_navy_size"
+    ],
+    "repeatable_keys": [
+        "modifier",
+        "path",
+        "folder"
     ]
 }

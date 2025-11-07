@@ -1,3 +1,4 @@
+import copy
 from typing import Any, Dict, List, Literal, Optional, Set, TypedDict
 from dataclasses import dataclass, field
 from scripts.generator.lexer import GameType
@@ -68,17 +69,22 @@ class TechCollection:
     ):
         self.parser_manager = ParserManager(path_str, game_type, config=parser_manager_config)
         self.transformed_tree = self.parser_manager.node_transformer.transformed_tree
-        self.techs = self._from_transformed_tree()
+        self.raw_technologies: Dict[str, Any] = copy.deepcopy(self.transformed_tree.get("technologies", {}))
+        self.techs = self._from_transformed_tree(copy.deepcopy(self.raw_technologies))
         self.tech_groups = self._group_techs()
 
-    def _from_transformed_tree(self):
-        if "technologies" not in self.transformed_tree:
+    def _from_transformed_tree(self, technologies_tree: Optional[Dict[str, Any]] = None):
+        if technologies_tree is None:
+            if "technologies" not in self.transformed_tree:
+                raise ValueError("No technologies found in the parsed tree")
+            technologies_tree = copy.deepcopy(self.transformed_tree["technologies"])
+        if not technologies_tree:
             raise ValueError("No technologies found in the parsed tree")
         _constants = []
-        if "_constants" in self.transformed_tree["technologies"]:
-            _constants = self.transformed_tree["technologies"].pop("_constants")
+        if "_constants" in technologies_tree:
+            _constants = technologies_tree.pop("_constants")
         techs: Dict[str, Tech] = {}
-        for name, tech in self.transformed_tree["technologies"].items():
+        for name, tech in technologies_tree.items():
             # print(name, tech)
             new_tech = Tech(
                 name=name,
@@ -142,14 +148,20 @@ class TechCollection:
         for modifier in ai_will_do.get("modifier", []):
             try:
                 mod = TechAIWillDoModifier(
-                    factor=modifier.pop("factor", 1), trigger_list=[{k: v} for k, v in modifier.items()]
+                    factor=modifier.pop("factor", 1) if isinstance(modifier, dict) else 0,
+                    trigger_list=[{k: v} for k, v in modifier.items() if isinstance(modifier, dict)],
                 )
                 tech_ai_will_do.append(TechAIWillDo(factor=ai_will_do.get("factor", 1), modifier_list=[mod]))
             except Exception as e:
                 print(f"Error extracting AI will do: {e}")
-                print(ai_will_do)
-                print(modifier)
-                print(type(modifier))
+                import json
+
+                # print(f"ai_will_do: {type(ai_will_do)}" + json.dumps(str(ai_will_do)))
+                print(f"ai will do (modifier.factor): {type(modifier)} {modifier}")
+                print(ai_will_do["modifier"]["factor"])
+                # print(modifier.pop())
+                # print(f"modifier: {type(modifier)}" + json.dumps(str(modifier)))
+
         return tech_ai_will_do
 
     def _group_techs(self, min_generation: int = 1):

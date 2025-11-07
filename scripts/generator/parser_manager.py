@@ -31,5 +31,8 @@ class ParserManager:
         self.input = open(path, "r").read()
         self.lexer = Lexer(input=self.input, game_type=game_type, config=self.config["lexer_config"])
         self.parser = Parser(tokens=self.lexer.tokens, config=self.config["parser_config"])
-        self.node_transformer = NodeTransformer(self.parser.parsed_tree)
+        self.node_transformer = NodeTransformer(
+            self.parser.parsed_tree,
+            always_list_keys=self.lexer.repeatable_keys,
+        )
         # self.transformed_tree = self.node_transformer.transformed_tree

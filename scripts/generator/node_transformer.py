@@ -64,10 +64,11 @@ class TransformedJSONEncoder(json.JSONEncoder):
 
 
 class NodeTransformer:
-    def __init__(self, parsed_tree: ObjectNode):
+    def __init__(self, parsed_tree: ObjectNode, always_list_keys: set[str] | None = None):
         if parsed_tree.context.value != "root":
             raise ValueError("Root node must have 'root' value")
         self.parsed_tree = parsed_tree
+        self.always_list_keys: set[str] = set(always_list_keys or [])
         self.transformed_tree = self._convert_object_node(parsed_tree)
         # self._validate_objects_and_arrays(self.transformed_tree)
 
@@ -120,14 +121,12 @@ class NodeTransformer:
                 key = self._convert_value_node(child.key)
                 if not isinstance(key, (str, int, float, bool)):
                     key = key.value
+
+                    # if False:
+                    # print("OMG")
+                    # print(f"key: {key}, value: {child.value}")
                 value = self._convert_node(child.value)
-                if key in context:
-                    if isinstance(context[key], list):
-                        context[key].append(value)
-                    else:
-                        context[key] = [context[key], value]
-                else:
-                    context[key] = value
+                self._store_in_context(context, key, value)
             elif isinstance(child, ComparisonNode):
                 comparison = self._convert_comparison_node(child)
                 context[comparison.left] = comparison
@@ -139,13 +138,28 @@ class NodeTransformer:
                     context[key] = self._convert_array_node(child)
             elif isinstance(child, (ObjectNode, EffectBlockNode, KeywordBlockNode, TriggerBlockNode)):
                 key = child.context.value
-                if key in context:
-                    if not isinstance(context[key], list):
-                        context[key] = [context[key]]
-                    context[key].append(self._convert_object_node(child))
-                else:
-                    context[key] = self._convert_object_node(child)
+                value = self._convert_object_node(child)
+                self._store_in_context(context, key, value)
         return context
+
+    def _store_in_context(self, context: Dict[Any, Any], key: Any, value: Any):
+        if key in self.always_list_keys:
+            existing_value = context.get(key)
+            if existing_value is None:
+                context[key] = [value]
+            elif isinstance(existing_value, list):
+                existing_value.append(value)
+            else:
+                context[key] = [existing_value, value]
+            return
+
+        if key in context:
+            if isinstance(context[key], list):
+                context[key].append(value)
+            else:
+                context[key] = [context[key], value]
+        else:
+            context[key] = value
 
     # def _validate_objects_and_arrays(self, node: ObjectNode | Dict[str, Any]):
     #     key_types: Dict[str, List[Type]] = defaultdict(list)
@@ -222,5 +236,5 @@ if __name__ == "__main__":
     tokens = lexer.tokenize()
     parser = Parser(tokens, config={"enable_logger": False})
     # parser.print_tree()
-    node_transformer = NodeTransformer(parser.parsed_tree)
+    node_transformer = NodeTransformer(parser.parsed_tree, always_list_keys=lexer.repeatable_keys)
     node_transformer.toJSON("countrytechtreeview_transformed.json")
