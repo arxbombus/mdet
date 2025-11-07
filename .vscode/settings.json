@@ -1,0 +1,4 @@
+{
+  "editor.defaultFormatter": "tboby.cwtools-vscode",
+  "editor.defaultFoldingRangeProvider": "tboby.cwtools-vscode"
+}
