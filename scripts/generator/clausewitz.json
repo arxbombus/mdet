@@ -1,0 +1,14 @@
+{
+    "keywords": [
+        "if",
+        "else_if",
+        "else"
+    ],
+    "triggers": [
+        "AND",
+        "OR",
+        "NOT",
+        "limit",
+        "check_variable"
+    ]
+}
